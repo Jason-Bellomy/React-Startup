@@ -1,14 +1,16 @@
 "use strict";
 var React = require('react');
+var Router = require('react-router');
+var Link = Router.Link;
 
-var Home = React.createClass({
+var Header = React.createClass({
     propTypes: {
         activeLink: React.PropTypes.string
     },
     getDefaultProps: function() {
         return {
             activeLink: "/home"
-        }
+        };
     },
     links: {
         HOME: "/home",
@@ -31,10 +33,10 @@ var Home = React.createClass({
                     <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul className="nav navbar-nav">
                             <li className={this.props.activeLink === this.links.HOME ? "active" : ""}>
-                                <a href={"/#" + this.links.HOME}><i title="Home" className="fa fa-home"></i></a>
+                                <Link to="app"><i title="Home" className="fa fa-home"></i></Link>
                             </li>
                             <li className={this.props.activeLink === this.links.ABOUT ? "active" : ""}>
-                                <a href={"/#" + this.links.ABOUT}>About</a>
+                                <Link to="about">About</Link>
                             </li>
                         </ul>
                     </div>
@@ -44,4 +46,4 @@ var Home = React.createClass({
     }
 });
 
-module.exports = Home;
+module.exports = Header;
