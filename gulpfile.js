@@ -83,7 +83,7 @@ gulp.task('watch', function() {
 
 gulp.task('default', ['html', 'js', 'css', 'icons', 'eslint', 'open', 'watch']);
 
-gulp.task('deploy', function () {
+gulp.task('deploy', ['open'], function () {
     return gulp.src("./dist/**/*")
     .pipe(deploy())
 });
