@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/Jason-Bellomy/React-Startup/issues"
   },
-  "homepage": "https://github.com/Jason-Bellomy/React-Startup#readme",
+  "homepage": "https://github.com/Jason-Bellomy/React-Startup",
   "dependencies": {
     "bootstrap": "^3.3.7",
     "browserify": "^11.0.0",
