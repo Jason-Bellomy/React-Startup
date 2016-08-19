@@ -8,6 +8,7 @@ var reactify = require('reactify');
 var source = require('vinyl-source-stream');
 var concat = require('gulp-concat');
 var esLint = require('gulp-eslint');
+var deploy      = require('gulp-gh-pages');
 
 var config = {
     port: 8080,
@@ -81,3 +82,8 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', ['html', 'js', 'css', 'icons', 'eslint', 'open', 'watch']);
+
+gulp.task('deploy', ['default'], function () {
+    return gulp.src(config.paths.dist + "/**/*")
+    .pipe(deploy())
+});
